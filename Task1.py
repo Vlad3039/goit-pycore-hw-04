@@ -1,5 +1,7 @@
 def total_salary(path):
 
+    # Аналізує файл із заробітними платами та повертає загальну та середню суму.
+    
     try:
         total = 0
         count = 0
@@ -7,7 +9,7 @@ def total_salary(path):
         with open(path, 'r', encoding='utf-8') as file:
             for line in file:
                 line = line.strip()
-                if line:  # пропускаємо порожні рядки
+                if line:
                     parts = line.split(',')
                     name = parts[0]
                     salary = int(parts[1])
@@ -29,10 +31,8 @@ def total_salary(path):
     except Exception as e:
         print(f"Помилка при читанні файлу: {e}")
         return 0, 0
- 
- 
-# Приклад використання
+
+
 if __name__ == "__main__":
     total, average = total_salary("salary.txt")
     print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
- 

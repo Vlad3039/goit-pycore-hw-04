@@ -1,6 +1,5 @@
 def parse_input(user_input):
-
-
+  
     parts = user_input.split()
     if not parts:
         return "", []
@@ -23,7 +22,7 @@ def add_contact(args, contacts):
 
 
 def change_contact(args, contacts):
-   
+  
     if len(args) < 2:
         return "Помилка: введіть ім'я та новий номер телефону."
     
@@ -38,16 +37,7 @@ def change_contact(args, contacts):
 
 
 def show_phone(args, contacts):
-    """
-    Показує номер телефону для вказаного контакту.
-    
-    Args:
-        args (list): Список аргументів [ім'я]
-        contacts (dict): Словник контактів
-        
-    Returns:
-        str: Номер телефону або повідомлення про помилку
-    """
+
     if len(args) < 1:
         return "Помилка: введіть ім'я контакту."
     
@@ -60,6 +50,7 @@ def show_phone(args, contacts):
 
 
 def show_all(contacts):
+
     if not contacts:
         return "Записник порожній."
     

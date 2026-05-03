@@ -1,13 +1,14 @@
 def get_cats_info(path):
-
-
+    """
+    Читає інформацію про котів з файлу і повертає список словників.
+    """
     cats_info = []
     
     try:
         with open(path, 'r', encoding='utf-8') as file:
             for line in file:
                 line = line.strip()
-                if line:  
+                if line:
                     parts = line.split(',')
                     
                     if len(parts) < 3:
@@ -29,11 +30,9 @@ def get_cats_info(path):
     except Exception as e:
         print(f"Помилка при читанні файлу: {e}")
         return []
- 
- 
-# Приклад використання
+
+
 if __name__ == "__main__":
     cats_info = get_cats_info("cats.txt")
     for cat in cats_info:
         print(cat)
- 
